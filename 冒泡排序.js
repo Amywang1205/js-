@@ -1,3 +1,4 @@
+//相邻的元素进行比较
 function bubbleSort (arr) {
   let max = arr.length - 1;
   for (let i = 0; i < max; i++) {
