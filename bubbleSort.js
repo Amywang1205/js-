@@ -1,20 +1,14 @@
 //相邻的元素进行比较
-function bubbleSort (arr) {
-  let max = arr.length - 1;
-  for (let i = 0; i < max; i++) {
-    // 声明一个变量，作为标志位
-    let done = true;
-    for (let j = 0; j < max - i; j++) {
-      if (arr[j] > arr[j + 1]) {
-        let temp = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = temp;
-        done = false;
-      }
-    }
-    if (done) {
-      break;
-    }
-  }
-  return arr;
+function bubbleSort(arr) {
+    var i = arr.length-1;  //初始时,最后位置保持不变
+    while ( i> 0) {
+        var pos= 0; //每趟开始时,无记录交换
+        for (var j= 0; j< i; j++)
+            if (arr[j]> arr[j+1]) {
+                pos= j; //记录交换的位置
+                var tmp = arr[j]; arr[j]=arr[j+1];arr[j+1]=tmp;
+            }
+        i= pos; //为下一趟排序作准备
+     }
+     return arr;
 }
